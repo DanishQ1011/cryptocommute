@@ -1,3 +1,4 @@
+import Map from "@/components/Map";
 import Navbar from "../components/Navbar";
 
 const style = {
@@ -9,7 +10,7 @@ export default function Home() {
     <div className={style.wrapper}>
       <Navbar/>
       <div className={style.main}>
-      {/* map */}
+        <Map/>  
       </div>
       <div className={style.rideRequestContainer}>
         <div className={style.rideRequest}>
