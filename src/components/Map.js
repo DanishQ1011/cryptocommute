@@ -19,8 +19,9 @@ const Map = () => {
     })
   }, [])
 
-  return <div className={style.wrapper} id='map'/>
-  
+  return (
+    <div className={style.wrapper} id='map'/>
+  )
 }
 
 export default Map 
