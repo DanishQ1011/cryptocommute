@@ -2,25 +2,33 @@
 
 import mapboxgl from 'mapbox-gl';
 import { useEffect } from 'react';
+import { useRef } from 'react'; 
 
 const style = {
   wrapper: `flex-1 h-full w-full`,
 }
 
 const Map = () => {
+
+  const mapContainerRef = useRef(null);
+
   useEffect(() => {
     mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
 
     const map = new mapboxgl.Map({
-      container: 'map',
+      container: mapContainerRef.current,
       style: 'mapbox://styles/shah1011/clsg5xu99019n01qq02fabk0v',
-      center: [-99.29011, 39.39172],
-      zoom: 5,
-    })
-  }, [])
+      center: [77.59011, 12.99172],
+      zoom: 10,
+    });
+
+    return () => {
+      map.remove();
+    }
+  }, []);
 
   return (
-    <div className={style.wrapper} id='map'/>
+    <div ref={mapContainerRef} className={style.wrapper} id='map'/>
   )
 }
 
