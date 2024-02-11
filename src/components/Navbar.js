@@ -3,7 +3,7 @@ import avatar from '../../public/assets/avatar.png'
 import { BsPerson } from 'react-icons/bs'
 
 const style ={
-    wrapper: `h-16 w-full bg-black text-white flex md:justify-around items-center px-60 z-20`,
+    wrapper: `py-4 h-24 w-full bg-black text-white flex md:justify-around items-center px-60 z-20`,
     leftMenu: `flex gap-3`,
     logo: `text-3xl text-white flex cursor-pointer mr-16`,
     menuItem: `text-lg text-white font-medium flex items-center mx-4 cursor-pointer`,

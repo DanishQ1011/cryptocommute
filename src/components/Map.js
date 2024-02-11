@@ -18,8 +18,8 @@ const Map = () => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/shah1011/clsg5xu99019n01qq02fabk0v',
-      center: [77.59011, 12.99172],
-      zoom: 10,
+      center: [77.53911, 12.98172],
+      zoom: 11,
     });
 
     return () => {
