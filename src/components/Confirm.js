@@ -3,9 +3,9 @@
 import RideSelector from '../components/RideSelector'
 
 const style ={
-    wrapper: `flex-1 h-full flex flex-col justify-between`,
+    wrapper: `flex-1 h-full flex flex-col justify-between overflow-scroll`,
     rideSelectorContainer: `pt-2 h-full flex flex-col `,
-    confirmButtonContainer: `border-t-2 cursor-pointer z-10`,
+    confirmButtonContainer: ` mt-6 cursor-pointer z-10`,
     confirmButton: `bg-black text-white m-2 p-2 text-center text-md`,
 }
 

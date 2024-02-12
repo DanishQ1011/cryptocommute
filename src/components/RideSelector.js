@@ -6,7 +6,7 @@ import Ethereum from '../../public/assets/Ethereum.png'
 import Image from 'next/image'
 
 const style = {
-    wrapper: `h-full flex flex-col`,
+    wrapper: `h-full flex flex-col `,
     title: `text-gray-500 text-center text-xs py-2 border-b`,
     carList: `flex flex-col flex-1`,
     car: `flex p-3 m-2 items-center border-2 border-white`,
@@ -16,7 +16,7 @@ const style = {
     service: `font-medium`,
     time: `text-xs text-blue-500`,
     priceContainer: `flex items-center`,
-    price: `mr-[-0.8rem]`
+    price: `mr-[-0.8rem]`,
 }
 
 const carList = [
@@ -52,10 +52,10 @@ const RideSelector = () => {
             {carList.map((car, index) => (
                 <div className={style.car}>
                 <Image
-                    src={car.iconUrl}
+                    src={car.image}
                     className={style.carImage}
-                    height={50}
-                    width={50}
+                    height={30}
+                    width={60}
                 />
                     <div className={style.carDetails}>
                         <div className={style.service}>{car.service}</div> 
