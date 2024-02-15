@@ -5,9 +5,9 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'CryptoCommute',
+  title: 'cryptocommute',
 
-  projectId: 'cgz3a8c9',
+  projectId: 'xlkg5xy9',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
