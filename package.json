@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/client": "^6.13.3",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.28.0",
     "mapbox-gl": "^3.1.2",

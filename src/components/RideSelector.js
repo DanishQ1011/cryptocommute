@@ -1,9 +1,12 @@
+'use client';
+
 import car1 from '../../public/assets/car1.png'
 import car2 from '../../public/assets/car2.png'
 import car3 from '../../public/assets/car3.png'
 import auto from '../../public/assets/auto.png'
 import Ethereum from '../../public/assets/Ethereum.png'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 const style = {
     wrapper: `h-full flex flex-col `,
@@ -19,32 +22,48 @@ const style = {
     price: `mr-[-0.8rem]`,
 }
 
-const carList = [
-    {
-        service: 'CommuteX',
-        image: car1,
-        priceMultiplier: 1,
-    },
-    {
-        service: 'CommutePremium',
-        image: car3,
-        priceMultiplier: 1.5,
-    },
-    {
-        service: 'CommuteXL',
-        image: car2,
-        priceMultiplier: 1.5,
-    },
-    {
-        service: 'CommuteMini',
-        image: auto,
-        priceMultiplier: 1.5,
-    },
-]
+// const carList = [
+//     {
+//         service: 'CommuteX',
+//         image: car1,
+//         priceMultiplier: 1,
+//     },
+//     {
+//         service: 'CommutePremium',
+//         image: car3,
+//         priceMultiplier: 1.5,
+//     },
+//     {
+//         service: 'CommuteXL',
+//         image: car2,
+//         priceMultiplier: 1.6,
+//     },
+//     {
+//         service: 'CommuteMini',
+//         image: auto,
+//         priceMultiplier: 0.6,
+//     },
+// ]
 
-const basePrice = 154
+const basePrice = 1542
 
 const RideSelector = () => {
+    const [carList, setCarList] = useState([])
+
+    useEffect(() => {
+       ;(async () => {
+            try{
+                const response = await fetch('/api/db/getRideTypes')
+
+                const data = await response.json()
+                setCarList(data.data)
+            } catch (error) {
+                console.error(error)
+            }
+       })() 
+    }, [])
+
+
   return (
     <div className={style.wrapper}>
         <div className={style.title}>Choose a ride, or swipe up for more</div>
