@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { CryptoCommuteProvider } from "../../context/cryptocommuteContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,8 +11,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <CryptoCommuteProvider>
     <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
+    </CryptoCommuteProvider>
   );
 }

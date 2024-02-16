@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useState, useEffect } from "react";
 
 export const CryptoCommuteContext = createContext()
@@ -53,6 +55,18 @@ export const CryptoCommuteProvider = ({ children }) => {
     }, [pickup, dropoff])
 
     return (
-        <CryptoCommuteContext.Provider value={" "}>{children}</CryptoCommuteContext.Provider>
+        <CryptoCommuteContext.Provider value={{
+            pickup,
+            setPickup,
+            dropoff,
+            setDropoff,
+            pickupCoordinates,
+            setPickupCoordinates,
+            dropoffCoordinates,
+            setDropoffCoordinates,
+        }}
+        >
+            {children}
+        </CryptoCommuteContext.Provider>
     )
 }

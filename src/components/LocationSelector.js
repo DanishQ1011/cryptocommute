@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from "react"; 
+import { useState, useContext } from "react"; 
+import { CryptoCommuteContext } from "../../context/cryptocommuteContext";
 
 const style = {
     wrapper: `pt-2`,
@@ -15,8 +16,7 @@ const style = {
 
 const LocationSelector = () => {
     const [inFocus, setInFocus] = useState('from')
-    const [pickup, setPickup] = useState('')
-    const [dropoff, setDropoff] = useState('')
+    const { pickup, setPickup, dropoff, setDropoff } = useContext(CryptoCommuteContext)
 
     console.log({pickup: pickup, dropoff: dropoff})
 
